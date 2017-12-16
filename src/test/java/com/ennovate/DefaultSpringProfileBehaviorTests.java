@@ -18,9 +18,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class DefaultSpringProfileBehaviorTests {
 
 	@Autowired
-	Environment environment;
-
-	@Autowired
 	ConditionalBean conditionalBean;
 
 	@Test

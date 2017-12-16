@@ -5,7 +5,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.env.Environment;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -14,18 +13,15 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@ActiveProfiles({"A","B"})
+@ActiveProfiles({"A", "B"})
 public class ConditionalBeanOnProfilesABActiveTests {
 
-	@Autowired
-	Environment environment;
+    @Autowired
+    private ConditionalBean conditionalBean;
 
-	@Autowired
-	ConditionalBean conditionalBean;
-
-	@Test
-	public void generatesConditionalBeanAB_onlyWhenBothProfilesAreActive() {
-		assertThat(conditionalBean.getValue(), equalTo("AB"));
-	}
+    @Test
+    public void generatesConditionalBeanAB_onlyWhenBothProfilesAreActive() {
+        assertThat(conditionalBean.getValue(), equalTo("AB"));
+    }
 
 }
