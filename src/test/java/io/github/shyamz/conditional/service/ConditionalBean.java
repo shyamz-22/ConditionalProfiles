@@ -1,4 +1,4 @@
-package com.ennovate.service;
+package io.github.shyamz.conditional.service;
 
 public interface ConditionalBean {
     String getValue();

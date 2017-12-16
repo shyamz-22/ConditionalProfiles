@@ -1,6 +1,6 @@
-package com.ennovate;
+package io.github.shyamz.conditional;
 
-import com.ennovate.service.ConditionalBean;
+import io.github.shyamz.conditional.service.ConditionalBean;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,15 +13,15 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@ActiveProfiles({"A", "B"})
-public class ConditionalBeanOnProfilesABActiveTests {
+@ActiveProfiles({"A"})
+public class DefaultSpringProfileBehaviorTests {
 
-    @Autowired
-    private ConditionalBean conditionalBean;
+	@Autowired
+	ConditionalBean conditionalBean;
 
-    @Test
-    public void generatesConditionalBeanAB_onlyWhenBothProfilesAreActive() {
-        assertThat(conditionalBean.getValue(), equalTo("AB"));
-    }
+	@Test
+	public void generatesConditionalBeanA_whenOnlyProfileAIsActive() {
+		assertThat(conditionalBean.getValue(), equalTo("A"));
+	}
 
 }

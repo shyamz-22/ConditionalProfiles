@@ -1,7 +1,6 @@
-package com.ennovate;
+package io.github.shyamz.conditional;
 
-import com.ennovate.condition.ConditionalOnProfiles;
-import com.ennovate.service.ConditionalBean;
+import io.github.shyamz.conditional.service.ConditionalBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;

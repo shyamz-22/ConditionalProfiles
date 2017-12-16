@@ -1,6 +1,6 @@
-package com.ennovate;
+package io.github.shyamz.conditional;
 
-import com.ennovate.service.ConditionalBean;
+import io.github.shyamz.conditional.service.ConditionalBean;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

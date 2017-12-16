@@ -1,4 +1,4 @@
-package com.ennovate.condition;
+package io.github.shyamz.conditional;
 
 import org.springframework.context.annotation.Conditional;
 
