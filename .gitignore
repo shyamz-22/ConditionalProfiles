@@ -1,0 +1,18 @@
+.idea
+*.iml
+.gradle
+.sass-cache/
+*.log
+.DS_Store
+build/
+classes/
+out/
+node_modules/
+*.iws
+*.ipr
+*.ids
+
+# ruby-related [license_finder]
+/.bundle/
+/vendor/bundle/
+*.xml
