@@ -17,7 +17,7 @@ setGroup("io.github.shyamz-22")
 
 jar {
 	baseName = 'conditional'
-	version = '0.0.1-SNAPSHOT'
+	version = VERSION_NAME
 }
 
 
@@ -42,3 +42,19 @@ task wrapper(type: Wrapper) {
 bootRepackage {
 	enabled = false
 }
+
+task javadocJar(type: Jar) {
+	classifier = 'javadoc'
+	from javadoc
+}
+
+task sourcesJar(type: Jar) {
+	classifier = 'sources'
+	from sourceSets.main.allSource
+}
+
+artifacts {
+	archives javadocJar, sourcesJar
+}
+
+apply from: 'publishToMaven.gradle'
