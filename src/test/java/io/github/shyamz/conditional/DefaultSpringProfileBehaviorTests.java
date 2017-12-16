@@ -16,12 +16,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @ActiveProfiles({"A"})
 public class DefaultSpringProfileBehaviorTests {
 
-	@Autowired
-	ConditionalBean conditionalBean;
+    @Autowired
+    private ConditionalBean conditionalBean;
 
-	@Test
-	public void generatesConditionalBeanA_whenOnlyProfileAIsActive() {
-		assertThat(conditionalBean.getValue(), equalTo("A"));
-	}
+    @Test
+    public void generatesConditionalBeanA_whenOnlyProfileAIsActive() {
+        assertThat(conditionalBean.getValue(), equalTo("A"));
+    }
 
 }

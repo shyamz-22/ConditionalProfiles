@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-@Conditional(ActiveOnProfilesCondition.class)
-public @interface ConditionalOnProfiles {
-    String[] value() default {};
-  }
+@Conditional(ConditionalOnAllProfilesCondition.class)
+public @interface ConditionalOnAllProfiles {
+    String[] value();
+}
