@@ -6,14 +6,9 @@ set -e
 
 main() {
 
-  CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-
-  echo "Current Branch Version : ${CURRENT_BRANCH}"
-
   echo "Current Branch Version with travis : ${TRAVIS_BRANCH}"
 
   if [ ${TRAVIS_BRANCH} != "master" ]; then
-      git checkout ${CURRENT_BRANCH}
 
       ./gradlew clean build  -PSONATYPE_USERNAME=${SONATYPE_USERNAME} -PSONATYPE_PASSWORD=${SONATYPE_PASSWORD}
 
