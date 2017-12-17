@@ -9,7 +9,7 @@ main() {
 
   local CURRENT_BRANCH=$(git branch -a | grep 'release/' | tail -n 1)
 
-  echo "${CURRENT_BRANCH}"
+  echo "Current Branch Version : ${CURRENT_BRANCH}"
   
   git checkout ${CURRENT_BRANCH}
 
@@ -19,13 +19,15 @@ main() {
 
   export $(cat build/version.properties | xargs)
 
-  GIT_TAG="${VERSION_DISPLAY}"
+  GIT_TAG=${VERSION_DISPLAY}
 
-  echo "./gradlew uploadArchives"
+  echo "Tag Version is : ${GIT_TAG}"
 
-  echo "git tag ${GIT_TAG}"
+  ./gradlew uploadArchives
 
-  echo "git push --tag"
+  git tag ${GIT_TAG}
+
+  git push --tag
 
 }
 
