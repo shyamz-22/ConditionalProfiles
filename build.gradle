@@ -6,12 +6,17 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 	}
+}
+
+plugins {
+   id 'net.nemerosa.versioning' version '2.0.0'
 }
 
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
+
 
 setGroup("io.github.shyamz-22")
 
@@ -20,8 +25,6 @@ jar {
 	version = VERSION_NAME
 }
 
-
-
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -29,10 +32,9 @@ repositories {
 	mavenCentral()
 }
 
-
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
-	testCompile('org.springframework.boot:spring-boot-starter-test') 
+	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 task wrapper(type: Wrapper) {
