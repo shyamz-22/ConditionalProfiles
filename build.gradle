@@ -11,7 +11,7 @@ buildscript {
 }
 
 plugins {
-   id 'net.nemerosa.versioning' version '2.0.0'
+   id 'net.nemerosa.versioning' version '2.6.1'
 }
 
 apply plugin: 'java'
@@ -60,9 +60,10 @@ artifacts {
 }
 
 versioning {
-    releaseMode = 'snapshot'	// how to compute version on release-branches
-    displayMode = 'snapshot'	// how to compute version on non-release-branches
-    dirty = { t -> t }		// switch off dirty-suffix ( could be usefull for local development )
+    releaseBuild = VERSIONING_RELEASE_BUILD
+    releaseMode = VERSIONING_RELEASE_MODE
+    displayMode = VERSIONING_DISPLAY_MODE
+    dirty = { t -> t }
 }
 
 apply from: 'publishToMaven.gradle'
