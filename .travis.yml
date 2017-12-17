@@ -13,7 +13,7 @@ before_script:
 script:
 - "./gradlew clean build -PSONATYPE_USERNAME=${SONATYPE_USERNAME} -PSONATYPE_PASSWORD=${SONATYPE_PASSWORD}"
 after_success:
-- ./publish/publish-patch.sh
+- "./publish/publish-patch.sh"
 env:
   global:
   - DEPLOY_DIR="`pwd`/publish"
