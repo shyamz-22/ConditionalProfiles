@@ -13,9 +13,9 @@ main() {
   
   git checkout ${CURRENT_BRANCH}
 
-  ./gradlew clean build
+  ./gradlew clean build  -PSONATYPE_USERNAME=${SONATYPE_USERNAME} -PSONATYPE_PASSWORD=${SONATYPE_PASSWORD}
 
-  ./gradlew versionFile
+  ./gradlew versionFile  -PSONATYPE_USERNAME=${SONATYPE_USERNAME} -PSONATYPE_PASSWORD=${SONATYPE_PASSWORD}
 
   export $(cat build/version.properties | xargs)
 
@@ -23,7 +23,7 @@ main() {
 
   echo "Tag Version is : ${GIT_TAG}"
 
-  ./gradlew uploadArchives
+  ./gradlew uploadArchives  -PSONATYPE_USERNAME=${SONATYPE_USERNAME} -PSONATYPE_PASSWORD=${SONATYPE_PASSWORD}
 
   git tag ${GIT_TAG}
 
