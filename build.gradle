@@ -59,4 +59,10 @@ artifacts {
 	archives javadocJar, sourcesJar
 }
 
+versioning {
+    releaseMode = 'snapshot'	// how to compute version on release-branches
+    displayMode = 'snapshot'	// how to compute version on non-release-branches
+    dirty = { t -> t }		// switch off dirty-suffix ( could be usefull for local development )
+}
+
 apply from: 'publishToMaven.gradle'
