@@ -12,8 +12,11 @@ before_script:
   -out $DEPLOY_DIR/secring.gpg -d
 script:
 - "./gradlew clean build -PSONATYPE_USERNAME=${SONATYPE_USERNAME} -PSONATYPE_PASSWORD=${SONATYPE_PASSWORD}"
-after_success:
-- "./publish/publish-patch.sh"
+deploy:
+  provider: script
+  script: "./publish/publish-patch.sh"
+  on:
+    branch: master
 env:
   global:
   - DEPLOY_DIR="`pwd`/publish"
