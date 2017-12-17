@@ -63,7 +63,9 @@ versioning {
     releaseBuild = VERSIONING_RELEASE_BUILD
     releaseMode = VERSIONING_RELEASE_MODE
     displayMode = VERSIONING_DISPLAY_MODE
+    branchEnv = ['TRAVIS_BRANCH','GIT_BRANCH', 'BRANCH_NAME']
     dirty = { t -> t }
+    releases = ['release']
 }
 
 apply from: 'publishToMaven.gradle'
