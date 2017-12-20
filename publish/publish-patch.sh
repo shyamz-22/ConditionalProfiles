@@ -10,6 +10,7 @@ main() {
    echo "Current TAG Version with travis : ${TRAVIS_TAG}"
 ./gradlew versionFile  -PSONATYPE_USERNAME=${SONATYPE_USERNAME} -PSONATYPE_PASSWORD=${SONATYPE_PASSWORD}
 
+
 #  if [ ${TRAVIS_BRANCH} != "master" ]; then
 
 #      ./gradlew clean build  -PSONATYPE_USERNAME=${SONATYPE_USERNAME} -PSONATYPE_PASSWORD=${SONATYPE_PASSWORD}
