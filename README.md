@@ -13,7 +13,7 @@ Creates the bean when Profile A **OR** B is active.
 @Bean
 @Profile("A", "B")
 public ExampleBean exampleBean() {
-  return ExampleBean();
+  return new ExampleBean();
 }
 ```
 
@@ -25,7 +25,7 @@ Creates the bean only when Profile A **AND** B are active.
 @Bean
 @ConditionalOnProfiles("A","B")
 public ExampleBean exampleBean() {
-  return ExampleBean();
+  return new ExampleBean();
 }
 ```
 
